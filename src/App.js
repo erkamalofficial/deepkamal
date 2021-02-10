@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import AboutPage from "./components/AboutPage";
+import Contact from "./components/Contact";
+import HomePage from "./components/HomePage";
+import Services from "./components/Services";
+import Navbar from "./components/Navbar";
+import SignIn from "./components/SignIn"
+import SignUp from "./components/SignUp"
+import Footer from "./components/Footer"
+import Weather from "./components/Weather"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {/* <SocialMedia/> */}
+    <BrowserRouter>
+      <Navbar />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/about" component={AboutPage} />
+          <Route exact path="/services" component={Services} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/login" component={SignIn} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/weather" component={Weather} />
+          < Redirect to="/" />.
+        </Switch>
+      </BrowserRouter>
+      <Footer/>
+    </>
   );
 }
 
