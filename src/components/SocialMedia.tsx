@@ -1,7 +1,7 @@
 import React from "react";
 import { Facebook, GitHub, Instagram, Twitter} from '@material-ui/icons'
 
-function SocialMedia() {
+export const SocialMedia = () => {
   return (
       <div className="social_media">
           <ul className=" ml-auto">
@@ -21,5 +21,3 @@ function SocialMedia() {
       </div>
   );
 }
-
-export default SocialMedia;
